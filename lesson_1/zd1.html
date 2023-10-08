@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>1_Завдання</title>
+  <style>
+  .boxDicisionDz{
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  .input{
+    min-height: 40px;
+    width: 350px;
+    border-radius: 10px;
+    margin: 0 5px 15px 5px;
+  }
+  .button{
+    padding: 10px 5px;
+    border: 2px black solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  </style>
+  <!-- <script src="js/script.js" defer></script> -->
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main">
+
+      <!-- ============================ Завданя============================================ -->
+      <div class="txt">
+        <a href="index.html" class="link">Завдання_1 (Link_поернення на головну)</a>
+        <div class="nameLesson">
+          <h1>Вводиться кількість пасажирів. Вивести:</h1> 
+          <ul>
+            <li>- скільки потрібно автобусів (кожен автобус на 20 місць)</li>
+            <li>- скільки пляшок води (кожному пасажиру 2 пляшки)</li>
+            <li>- скільки бутербродів (кожному пасажиру 3 бутерброди)</li>
+          </ul>
+        </div>
+      </div>
+      <!-- ================================ HTML ======================================== -->
+      <div class="boxDicisionDz" id="app">
+        <ul>
+          <li>
+            <span>Для</span>
+            <input type="number" v-model.lazy="numberPassengers" placeholder="Веедіть кількість пасажирів" class="input">
+            <span>пасажирів</span>
+          </li>
+          <li>
+            <button @click="getRequirementsForTrip" class="button">Порахувати</button>
+          </li>
+          <li><span>Потрібно</span></li>
+          <li><span>{{bus}}</span> автобусів,</li>
+          <li><span>{{water}}</span> пляшок води,</li>
+          <li><span>{{sandwich}}</span> бутербродів</li>
+        </ul>
+      </div>
+
+      
+      <!-- ================================ Script ======================================== -->
+      <script>
+      const {createApp} = Vue
+      createApp({
+        data(){
+          return{
+            numberPassengers: null,
+            bus: null,
+            water: null,
+            sandwich: null,
+          }
+        },
+        computed:{
+          getRequirementsForTrip(){
+            this.bus = Math.ceil(this.numberPassengers / 20)
+            this.water = this.numberPassengers * 2
+            this.sandwich = this.numberPassengers * 3
+            console.log(777);
+          }
+        }
+      }).mount('#app')
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+  </div>
+</body>
+</html>
