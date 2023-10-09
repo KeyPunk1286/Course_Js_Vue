@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>4_Завдання</title>
+    <style>
+      .boxDecisionDz{
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
+      .greenText{
+        color: green;
+      }
+      .redText{
+        color: red;
+      }
+      .input{
+        width: 300px;
+        height: 35px;
+        border-radius: 10px;
+        margin: 0 5px 0 5px;
+
+      }
+      .button{
+        border: 2px black solid;
+        border-radius: 10px;
+        padding: 10px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <!-- ============================ Завданя============================================ -->
+        <div class="txt">
+          <a href="index.html" class="link"
+            >Завдання_4 (Link_поернення на головну)</a
+          >
+          <div class="nameLesson">
+            <h1>“Рахунок у банку”</h1>
+            <ul>
+              <li>- Спочатку сума дорівнює 0грн. Змінити суму у гривнях можна або зарахуванням на рахунок, або зняттям.</li>
+              <li>- Сума автоматично переводиться у долари та євро (фіксований курс задається у data).</li>
+              <li>- можливість зарахувати суму (контролювати, щоб не була від’ємною)</li>
+              <li>- можливість зняти (щоб не можна зняти більше ніж є на рахунку)</li>
+              <li>- при виконанні зняття і зарахування коштів вираховувати 3% від суми (відображати кількість відсотків автоматично)</li>
+            </ul>
+            <h2>При зміні суми:</h2>
+            <ul>
+              <li>- якщо було зняття, то суму відоражати червоним</li>
+              <li>- якщо було зарахування, то суму відображати зеленим</li>
+              <li>- Якщо сума валюти менша за 100 то відображати червоним кольором, інакше - зеленим</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ================================ HTML ======================================== -->
+        <div class="boxDecisionDz" id="app">
+          <div :class="className">Сума рахунку: <span>{{balanceMooney}}</span></div>
+          <div>
+            <span>Зарахувати на рахунок</span>
+            <input type="number" v-model="addingMoney" class="input">
+            <button @click="addSumGrn" class="button">Зарахувати</button>
+          </div>
+          <div>
+            <span>Зняти з рахунку</span>
+            <input type="number" v-model="withdrawMoney" class="input">
+            <button @click="withdrawSumGrn" class="button">Зняти</button>
+          </div>
+          <div>Відсотки за обслуговання <span>{{percentageForTheUse}}</span></div>
+          <div>
+            <div>Сума у доларах: <span>{{dollarSum}}</span></div>
+            <div>Сума у евро: <span>{{euroSum}}</span></div>
+          </div>
+          <div :class="className" >{{warningMessage}}</div>
+        </div>
+        <!-- ================================ Script ======================================== -->
+        <script>
+          const {createApp} = Vue 
+          const messageList = [
+            'Недостатньо коштів на рахунку',
+            'Знято'
+          ]
+          const classNameList = [
+            'greenText',
+            'redText'
+          ]
+          createApp({
+            data(){
+              return{
+                balanceMooney: 0,
+                addingMoney: null,
+                withdrawMoney: null,
+                percentageForTheUse: null, 
+                dllarRate: 38.2,
+                euroRate: 40.7,
+                grnSumDollar: null,
+                grnSumEuro: null,
+                warningMessage: null,
+                className: null,
+              }
+            },
+            methods:{
+              addSumGrn(){
+                this.balanceMooney += this.addingMoney
+                this.percentageForTheUse = this.balanceMooney * 0.03
+                this.balanceMooney -= this.percentageForTheUse.toFixed(2)
+                this.addingMoney = null
+                this.className = classNameList[0]
+
+              },
+              withdrawSumGrn(){
+                const withdrawWithPercent = this.withdrawMoney * 0.03
+                const withdrawMoney = this.withdrawMoney + withdrawWithPercent
+                const countBalance = this.balanceMooney 
+                if(withdrawMoney > countBalance){
+                  this.warningMessage = messageList[0]
+                  this.className = classNameList[1]
+                  this.withdrawMoney = null
+                  setTimeout(() => {
+                    this.warningMessage = null
+                  }, 3000);
+                }
+                else {
+                  this.balanceMooney -= withdrawMoney
+                  this.warningMessage = messageList[1]
+                  this.className = classNameList[1]
+                  this.withdrawMoney = null
+                  setTimeout(() => {
+                    this.warningMessage = null
+                  }, 3000);
+                } 
+              }
+            },
+            // Стосовно Якщо сума валюти менша за 100 то відображати 
+            // червоним кольором, інакше - зеленим
+            // Я не дуже поки розумію як це зробити, хіба шо ще одна умова
+            // в умові?? Але і так забагато я написав :)  чи вірно так?  
+            computed:{
+              dollarSum(){
+                return (this.balanceMooney/this.dllarRate).toFixed(2)
+              },
+              euroSum(){
+                return (this.balanceMooney/this.euroRate).toFixed(2)
+              }
+            }
+          }).mount('#app')
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
