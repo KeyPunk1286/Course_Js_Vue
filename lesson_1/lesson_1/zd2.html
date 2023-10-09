@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>2_Завдання</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+      .boxDecisionDz {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
+      .input{
+        min-height: 40px;
+        width: 350px;
+        border-radius: 10px;
+        margin: 0 5px 15px 5px;
+      }
+      .text{
+        margin-bottom: 15px;
+        font-size: 25px;
+      }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main">
+
+      <!-- ============================ Завданя============================================ -->
+      <div class="txt">
+        <a href="index.html" class="link">Завдання_2 (Link_поернення на головну)</a>
+        <div class="nameLesson">
+          Вводиться номер місяця. Автоматично виводити рекомендований одяг (зима – пальто, літо – шорти ….). 
+          Також автоматично виводити зображення з відповідним зображенням лісу (зима – ліс зі снігом, осінь – 
+          жовтий ліс, …)
+        </div>
+      </div>
+
+      <!-- ================================ HTML ======================================== -->
+      <div class="boxDecisionDz" id="app">
+        <input type="number" v-model.lazy="numMonth" placeholder="введіть номер місяця від 1 до 12" class="input">
+        <div class="text">{{typeOfClothing}}</div>
+        <img :src="timeOfYear" alt="">
+      </div>
+      <!-- ================================ Script ======================================== -->
+      <script>
+      const {createApp} = Vue 
+      const typeOfClothingList = [
+              'Треба вдягнути пальто і шапку з шарфом',
+              'Треба вдягнути легеньку сорочку',
+              'Треба вдягнути шорти і футболку',
+              'Треба вдягнути олімпійку та штани',
+            ]
+      const timeOfYearList = [
+              'img/winter.jpg',
+              'img/spring.jpg',
+              'img/summer.jpg',
+              'img/autumn.jpg',
+            ]
+      createApp({
+        data(){
+          return{
+            numMonth: null,
+          }
+        },
+        computed:{
+          typeOfClothing(){
+            switch(this.numMonth){
+              case 1:
+              case 2:
+              case 12: return typeOfClothingList[0]
+              break
+              case 3:
+              case 4:
+              case 5: return typeOfClothingList[1]
+              break
+              case 6:
+              case 7:
+              case 8: return typeOfClothingList[2]
+              break
+              case 9:
+              case 10:
+              case 11: return typeOfClothingList[3]
+              break
+            }
+          },
+          timeOfYear(){
+            switch(this.numMonth){
+              case 1:
+              case 2:
+              case 12: return timeOfYearList[0]
+              break
+              case 3:
+              case 4:
+              case 5: return timeOfYearList[1]
+              break
+              case 6:
+              case 7:
+              case 8: return timeOfYearList[2]
+              break
+              case 9:
+              case 10:
+              case 11: return timeOfYearList[3]
+              break
+            }
+          }
+        }
+      }).mount('#app')
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+</html>
