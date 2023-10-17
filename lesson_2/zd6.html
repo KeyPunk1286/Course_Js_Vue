@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>6_Завдання</title>
+  <style>
+    .boxDecisionDz{
+      max-width: 700px;
+      margin: 0 auto;
+      padding-top: 50px;
+      
+    }
+    .tableOrders{
+      display: flex;
+    }
+    .new{
+      border: 1px black solid;
+      padding: 5px 3px;
+    }
+    .new span{
+      margin-right: 10px;
+    }
+  .new button{
+    border: 1px black solid;
+    padding: 5px 3px;
+  }
+  .table{
+    width: 200px;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main">
+
+      <!-- ============================ Завданя============================================ -->
+      <div class="txt">
+        <a href="index.html" class="link">Завдання_6 (Link_поернення на головну)</a>
+        <div class="nameLesson">
+          На кухню поступають замовлення. Спочатку ми додаємо їх у список 
+          “Очікують на виконання”, якщо повар береться робити — замовлення 
+          переходить у список “Виконуються”,   якщо замовлення виконано — переходить 
+          у список “Готові до виносу”. Якщо натиснути на “Подано” - страва зникає з таблиці
+        </div>
+      </div>
+
+      <!-- ================================ HTML ======================================== -->
+      <div class="boxDecisionDz" id="app">
+        <label for="1">Нова замовлена страва: </label>
+        <input id="1" type="text" v-model="inNewOrder">
+        <button @click="addOrder">Додати</button>
+        <div class="tableOrders">
+          <div class="table">
+            <template v-for="(dish, index) in waitingList" :key="index">
+              <div class="new">
+                <span>{{dish}}</span>
+                <button @click="addToCooking(index)">Готувати</button>
+              </div>
+            </template>
+          </div>
+
+          <div class="table">
+            <template v-for="(dish, index) in processingList" :key="index">
+              <div class="new">
+                <span>{{dish}}</span>
+                <button @click="addToCompleited(index)">Приготовлено</button>
+              </div>
+            </template>
+          </div>
+
+          <div class="table">
+            <template v-for="(dish, index) in completedList" :key="index">
+              <div class="new">
+                <span>{{dish}}</span>
+                <button @click="onDeleteCompleted(index)">Подано</button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+      <!-- ================================ Script ======================================== -->
+  <script>
+    const {createApp} = Vue 
+    createApp({
+      data(){
+        return{
+          inNewOrder: null,
+          waitingList: [],
+          processingList: [],
+          completedList: []
+        }
+      },
+      methods:{
+        addOrder(){
+          if(this.inNewOrder !==null){
+            this.waitingList.push(this.inNewOrder)
+            this.inNewOrder = null
+          }
+        },
+        addToCooking(index){
+          this.processingList.push(this.waitingList[index])
+          this.waitingList.splice(index,1)
+        },
+        addToCompleited(index){
+          this.completedList.push(this.processingList[index])
+          this.processingList.splice(index,1)
+        },
+        onDeleteCompleted(index){
+          this.completedList.splice(index,1)
+        }
+      }
+    }).mount('#app')
+  </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+</html>
