@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>2_Завдання</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+      .boxDecisionDz {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 50px;
+        display: flex;
+        column-gap: 30px;
+      }
+      .word{
+        max-width: 200px;
+        border: 1px black solid;
+        padding: 10px;
+      }
+      .black-border{
+        border: 1px black solid;
+        padding: 10px;
+      }
+      .blue-border{
+        border: 3px blue solid;
+        padding: 10px;
+      }
+      .red-border{
+        border: 3px red solid;
+        padding: 10px;
+      }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main">
+
+      <!-- ============================ Завданя============================================ -->
+      <div class="txt">
+        <a href="index.html" class="link">Завдання_2 (Link_поернення на головну)</a>
+        <div class="nameLesson">
+          Перекладач. Користувачу виводять змішані картки з словами на англійській і українській мові. 
+          Користувач поступово клікає на картки (виділяємо синьою рамкою). Якщо знайдено правильні 
+          пари карток, що відповідають одному слову, то видаляємо ці картки. Інакше - виділяємо 
+          червоною рамкою і через секунду забираємо рамку.
+        </div>
+      </div>
+
+      <!-- ================================ HTML ======================================== -->
+      <div class="boxDecisionDz" id="app">
+        <button @click="randomWordsList">Почати Перекладати?</button>
+        <div class="en word">
+          <ul>
+            <li v-for="(word, index) in enWordList" :key="index" class="black-border"
+            :class="{'blue-border':addBlueBorder(index),
+            'red-border': word.id===enWordId && isWrongAnswer}" 
+            @click="onClickWordEn(word,index)">{{word.en}}</li> 
+            
+          </ul>
+        </div>
+        <div class="ua word">
+          <ul>
+            <li v-for="(word, index) in uaWordList" :key="index" class="black-border"
+            :class="{'red-border': word.id===uaWordId && isWrongAnswer}"
+            @click="onClickWordUa(word, index)">{{word.ua}}</li>
+            
+          </ul>
+        </div>
+        <p><span>{{enWordId}}</span><span>{{uaWordId}}</span><span>{{testColor}}</span></p>
+      </div>
+      <!-- ================================ Script ======================================== -->
+      <script>
+        const {createApp} = Vue 
+        const wordsList = [
+          {id:1,en:'word', ua:'слово'},
+          {id:2,en:'peace', ua:'мир'},
+          {id:3,en:'smile', ua:'посмішка'},
+          {id:4,en:'ice cream', ua:'морозиво'},
+          {id:5,en:'strawberry' ,ua:'полуниця'},
+          {id:6,en:'book', ua:'книга'},
+          {id:7,en:'house', ua:'будинок'},
+        ]
+        const TIMEOUT_MS = 1000
+        createApp({
+          data(){
+            return{
+              enWordId: null,
+              uaWordId: null,
+              enWordList: null,
+              uaWordList: null,
+              indexEnWord: null,
+              indexUaWord: null,
+            }
+          },
+          computed:{
+            isWrongAnswer(){
+              if(this.uaWordId !== null){
+                if(this.enWordId !== this.uaWordId) {
+                  this.onDeleteRedBorder()
+                  return true
+                }
+              }
+            },
+          },
+          methods:{
+            onDeleteRedBorder(){
+              setTimeout(() => {
+                this.uaWordId = null
+              }, TIMEOUT_MS);
+            },
+            shuffleWordList(arr){
+              for (let i = arr.length-1; i > 0; i--) {
+                let temp = arr[i]
+                let random = Math.floor(Math.random() * (i+1))
+                arr[i] = arr[random]
+                arr[random] = temp
+              }
+              return arr
+            },
+            randomWordsList(){
+              let copyRandomListEn = [...wordsList]
+              this.enWordList = this.shuffleWordList(copyRandomListEn)
+              let copyRandomListUa = [...wordsList]
+              this.uaWordList = this.shuffleWordList(copyRandomListUa)
+            },
+            onClickWordEn(word,index){
+              this.enWordId = word.id
+              this.indexEnWord = index
+            },
+            addBlueBorder(index){
+              if(index === this.indexEnWord) return  true
+            },
+            onClickWordUa(word, index){
+              this.uaWordId = word.id
+              this.indexUaWord = index
+              this.checkerWords()
+            },
+            checkerWords(index){
+              if(this.enWordId === this.uaWordId){
+                this.enWordList.splice(this.indexEnWord,1)
+                this.uaWordList.splice(this.indexUaWord,1)
+                this.enWordId = null
+                this.uaWordId = null
+                this.indexEnWord = null
+              }
+            },
+          }
+        }).mount('#app')
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+</html>

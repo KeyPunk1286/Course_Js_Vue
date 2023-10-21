@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app1">
+    <div v-for="i in 10">{{isRandomNum()}}</div>
+  </div>
+  <hr>
+  <div id="app2">
+    <div v-for="i in 10">{{i}} - {{isRandomNum()}}</div>
+  </div>
+  <hr>
+  <div id="app3">
+    <template v-for="i in 5">
+      <h3>{{i}}</h3>
+      <div>{{i}} ^ 2 = {{i*i}}</div>
+      <div>{{i}} ^ 3 = {{i*i*i}}</div>
+    </template>
+  </div>
+  <hr>
+  <div id="app4">
+    <div v-for="i in 4">{{i}} {{isRandomWish()}}</div>
+  </div>
+  <hr>
+  <div id="app5">
+    <div v-for="product in productList" :key="product.id">
+      <div>{{}} {{product.title}}</div>
+      <div>Price: {{product.price}}</div>
+      <hr>
+    </div>
+  </div>
+  <div id="app6">
+    <template v-for="(book, index) in books" :key="index">
+      <h3>{{index+1}} : {{book.author}}</h3>
+      <h4>{{book.title}}</h4>
+      <img :src="book.img">
+      <div>{{book.price}}</div>
+      <hr>
+    </template>
+  </div>
+  <div id="app7">
+    <div>
+      <span>Назва товару</span>
+      <input type="text" v-model="nameProduct">
+    </div>
+    <div>
+      <span>Кількість</span>
+      <input type="number" v-model="numProduct">
+    </div>
+    <div><button @click="addProduct">Додати</button></div>
+    <div>
+      <h4>Список продуктів</h4>
+      <p v-for="(product, index) in listProduct" :key="index">
+        {{index+1}}:{{product.title}} - {{product.count}}
+      </p>
+      <div><button @click="clearList">Видалити</button></div>
+  </div>
+  </div>
+  <script>
+    const {createApp} = Vue
+    const wishes = [
+      {
+        id:1,
+        wish: 'Тобі сьогодні особливо пощастить!'
+      },
+      {
+        id:2,
+        wish: 'Життя готує тобі приємний сюрприз!'
+      },
+      {
+        id:3,
+        wish: 'Усе складається для тебе найкращим чином!!'
+      },
+      {
+        id:4,
+        wish: 'Сьогодні твій день, щасти тобі!'
+      },
+      {
+        id:5,
+        wish: 'Сьогодні Фортуна з тобою разом!'
+      },
+      {
+        id:6,
+        wish: 'Пам’ятай: ти народився, щоб бути щасливим!'
+      },
+      {
+        id:7,
+        wish: 'Люби себе таким, яким ти є, – неповторним!'
+      },
+      {
+        id:8,
+        wish: 'Потурбуйся про здоров’я свого тіла!'
+      },
+      {
+        id:9,
+        wish: 'Зроби собі подарунок, ти на нього заслуговуєш!'
+      },
+      {
+        id:10,
+        wish: 'Вищі сили оберігають тебе!'
+      },
+    ] 
+    const bookList = [
+      {
+        author: 'J.k Rowling',
+        title: 'Harry Potter',
+        price: 10.99,
+        img: 'img/pngwing.com.png' 
+      },
+      {
+        author: 'J.R.R Tolkien',
+        title: 'The lord of the Rings',
+        price: 12.99,
+        img: 'img/pngwing.com.png' 
+      },
+      {
+        author: 'Harper Lee',
+        title: 'To Kill a Mockingbird',
+        price: 9.99,
+        img: 'img/pngwing.com.png' 
+      },
+      {
+        author: 'George Orwell',
+        title: '1984',
+        price: 8.99,
+        img: 'img/pngwing.com.png' 
+      },
+    ]
+    const app1 = createApp({
+      methods:{
+        isRandomNum(){
+          return Math.floor(Math.random()*15)
+        }
+      }
+    }).mount('#app1')
+    const app2 = createApp({
+      methods:{
+        isRandomNum(){
+          return Math.floor(Math.random()*15)
+        }
+      }
+    }).mount('#app2')
+    const app3 = createApp({
+      data(){
+        return{
+          
+        }
+      }
+    }).mount('#app3')
+    const app4 = createApp({
+      methods:{
+        isRandomWish(){
+          const random = Math.floor(Math.random() * wishes.length)
+          return wishes[random].wish
+        }
+      }
+    }).mount('#app4')
+    const app5 = createApp({
+      data(){
+        return{
+          productList:[
+            {
+              id:1,
+              title: 'Milk',
+              price: 90,
+            },
+            {
+              id:1,
+              title: 'Tea',
+              price: 10,
+            },
+            {
+              id:1,
+              title: 'Milk',
+              price: 90,
+            },
+            {
+              id:1,
+              title: 'Bread',
+              price: 50,
+            },
+          ]
+
+        }
+      }
+    }).mount('#app5')
+    const app6 = createApp({
+      computed:{
+        books(){
+          return bookList
+        }
+      }
+    }).mount('#app6')
+    const app7 = createApp({
+      data(){
+        return{
+          nameProduct:null,
+          numProduct: null,
+          listProduct: [],
+        }
+      },
+      methods:{
+        addProduct(){
+            this.listProduct.push(
+            {
+              title: this.nameProduct,
+              count: this.numProduct,
+            }
+          )
+          this.nameProduct = null,
+          this.numProduct = null
+        },
+        clearList(){
+          this.listProduct = []
+        }
+      },
+      
+    }).mount('#app7')
+  </script>
+</body>
+</html>

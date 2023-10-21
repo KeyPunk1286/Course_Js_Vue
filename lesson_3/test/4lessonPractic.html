@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  .block{
+    padding: 20px;
+    border: 2px black solid;
+    margin-bottom: 15px;
+  }
+  .frost{
+    background-color: rgb(187, 187, 238);
+  }
+  .low{
+    background-color: blue;
+  }
+  .middle{
+    background-color: green;
+  }
+  .high{
+    background-color: red;
+  }
+  .min50{
+    background-color: chocolate;
+  }
+  .middle100{
+    background-color: rgb(18, 129, 14);
+  }
+  .high100{
+    background-color: brown;
+  }
+  .cell{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px black solid;
+    margin: 5px;
+  }
+  .closet{
+    background-color: rgb(63, 63, 63);
+  }
+  .mine{
+    background-color: red;
+  }
+  .free{
+    background-color: green;
+  }
+</style>
+<body>
+  <!-- Вивести дані які представлені у об'єкті -->
+  <div id="app" class="block">
+    <div v-for="(timeYear, seasonTitle) in someObj" :key="seasonTitle">
+      <p>{{timeYear.title}} - {{timeYear.visitors}}</p>
+    </div>
+    </div>
+  </div>
+  
+  
+  <!-- 2 === Банк ===  -->
+  <!-- Задача 4. “Рахунок у банку”
+    Вимоги:
+    1) Спочатку сума дорівнює 0грн. Змінити суму у гривнях можна або зарахуванням на рахунок, або зняттям.
+    2) Сума автоматично переводиться у долари та євро (фіксований курс задається у data).
+    3) можливість зарахувати суму (контролювати, щоб не була від’ємною)
+    4) можливість зняти (щоб не можна зняти більше ніж є на рахунку)
+    5) при виконанні зняття і зарахування коштів вираховувати 3% від суми (відображати кількість відсотків автоматично)
+    
+    При зміні суми :
+    - якщо було зняття, то суму відоражати червоним
+    - якщо було зарахування, то суму відображати зеленим
+    Якщо сума валюти менша за 100 то відображати червоним кольором, інакше - зеленим -->
+
+    <div id="bank" class="block">
+      <p>На вашому рахунку: {{balance}} гр</p>
+      <div>
+        <label for="1">Додати кошти: </label>
+        <input id="1" v-model="addMoney" type="number" @focus="onFocus">
+        <button @click="onAddMoney">Ok</button>
+      </div>
+      <div>
+        <label for="2">Зняти кошти: </label>
+        <input id="2" v-model="withdrawMoney" type="number" @focus="onFocus">
+        <button @click="onWithdrawMoney">OK</button>
+      </div>
+      <p><span>Процент від операції</span>{{taxLabel}}</p>
+      <p><span>Сума у доларах</span>{{onDollarConvert}}</p>
+      <p><span>Сума у євро</span>{{onEuvroConvert}}</p>
+      <p>{{message}}</p>
+    </div>
+  
+  
+  
+    <!-- 3 ==== Сантиметер в метер ==== -->
+    <!-- З клавіатури вводиться довжина у сантиметрах. Виводити скільки це метрів, кілометрів. -->
+    <div class="block" id="centimeter">
+      <label for="cm">Для визначення введіть сантиметр: </label>
+      <input id="cm" type="number" v-model="centimeterIn">
+      <p>У метрах: {{onMeters}}</p>
+      <p>У кілометрах: {{onKilometers}}</p>
+    </div>
+  
+  
+  
+    <!-- 4 ==== Температура ==== -->
+    <!-- Задача 2. З клавіатури вводиться температура. Змінювати колір фону у залежності від значення:
+    •	менше нуля – білий -frost
+    •	від 0 до 10 – синій -low,
+    •	від 11 до 22 – зелений -middle
+    •	вище 22 – червоний -high
+    Реалізувати з класами і стилями. -->
+    <div class="block" id="tep">
+      <label for="teper">Введіть вами температуру >> </label>
+      <input id="teper" type="number" v-model="inTeperature" :class="{[temperatureClass]:inTeperature}">
+    </div>
+  
+
+
+    <!-- 4 === Про лиміт швидкості === -->
+    <!-- Задача 3. Вводиться дозволена швидкість і поточна швидкість авто. 
+    Якщо не введено дозволену швидкість, то елемент введення поточної 
+    швидкості заблокований. Якщо швидкість менше 50% дозволеної, то колір 
+    input – оранжевий, якщо від 50% до 100% - зелений, вище 100% - червоний. 
+    Якщо значення вище 90% починає блимати повідомлення «Увага!»     -->
+    <div class="block" id="speed">
+      <label for="limit">limitSpeed </label>
+      <input id="limit" type="number" v-model="limitSpeed">
+      <label for="current">currentSpeed </label>
+      <input id="current" type="number" v-model="currentSpeed" :disabled="!limitSpeed" :class="{[currentClassSpeed]:isValidSpeed}">
+      <div v-show="visibleAlert">Увага! збавьте швидкість</div>
+    </div>
+
+
+    <!-- 5 === Сапер === -->
+    <!-- Задача 4. Однорядковий сапер. Однорядкова таблиця, до клітинок 
+      якої додано інформацію про наявність міни (використати атрибути). 
+      Спочатку клітинки сірі. При натисненні на клітинку аналізується 
+      чи є там міна і тоді колір стає червоним, якщо немає – зеленим. 
+      Додати можливість відкриття усіх сусідніх незамінованих клітинок 
+      при відкритті незамінованої клітинки. -->
+      <div class="block" id="Minesweeper">
+        <div v-for="(cell, index) in gamefiled" :key="index" class="cell" 
+        :class="{'closet':cell.inClosed, 
+        'mine':!cell.inClosed && cell.hasMine, 
+        'free':!cell.inClosed && !cell.hasMine}" @click="onClick(index)"></div>
+      </div>
+
+
+    <!-- 6 ==== пошук імен ==== -->
+        <!-- Задача 7. Динамічний пошук. Є список працівників і поле пошуку. 
+      При введенні відображаються усі, які містять вказаний фрагмент -->
+      <div class="block" id="search">
+        <label for="srch">Введіть ім'я </label>
+        <input id="search" type="text" v-model="inName">
+        <ul v-if="filtorName.length">
+          <li v-for="(name, index) in filtorName" :key="index">{{name}}</li>
+        </ul>
+      </div>
+    
+      <!-- ==== script === -->
+  <script>
+    const {createApp} = Vue 
+    const app = createApp({
+      data(){
+        return{
+          someObj:{
+            spring:{
+              title: 'Весна',
+              temp: 12,
+              visitors: 100
+            },
+            summer:{
+              title: 'Літо',
+              temp: 25,
+              visitors: 600
+            },
+            autumn:{
+              title: 'Осінь',
+              temp: 8,
+              visitors: 107
+            },
+            winter:{
+              title: 'Зима',
+              temp: 0,
+              visitors: 1002
+            },
+          }
+        }
+      }
+    }).mount('#app')
+    
+
+    //bank
+    const DOLLAR_RATE = 37.4
+    const EURO_RATE = 39.6
+    const TAX_PERCENTAGE = 3
+    const INTERVAL_MS = 1000
+    const bank = createApp({
+      data(){
+        return{
+          balance: null,
+          addMoney: null,
+          withdrawMoney: null,
+          message: null,
+        }
+      },
+      computed:{
+        taxRate(){
+          const sumMoney = (this.addMoney??0) + (this.withdrawMoney??0)
+          return (sumMoney * TAX_PERCENTAGE) / 100
+        },
+        taxLabel(){
+          return this.taxRate.toFixed(2)
+        },
+        onDollarConvert(){
+          return (this.balance / DOLLAR_RATE).toFixed(2)
+        },
+        onEuvroConvert(){
+          return (this.balance / EURO_RATE).toFixed(2)
+        },
+      },
+      methods:{
+        onAddMoney(){
+          if(this.addMoney<0){
+            this.message = 'Сума має бути додатним'
+            return
+          }
+          this.balance += this.addMoney - this.taxRate
+          this.addMoney = null
+        },
+        onWithdrawMoney(){
+          const valueToSubtract = this.withdrawMoney + this.taxRate
+          if(valueToSubtract > this.balance){
+            this.message = 'Недостатньо грошей на рахунку'
+            return
+          }
+          this.balance -= valueToSubtract
+          this.withdrawMoney = null
+        }, 
+        onFocus(){
+          this.message = null
+        }
+      }
+    }).mount('#bank')
+  
+  
+    // сантиметри у метри та кілометри
+    const centimeter = createApp({
+      data(){
+        return{
+          centimeterIn: null
+        }
+      },
+      computed:{
+        onMeters(){
+          return (this.centimeterIn / 100).toFixed(2)
+        },
+        onKilometers(){
+          return (this.onMeters / 1000).toFixed(2)
+        },
+      }
+    }).mount('#centimeter')
+  
+  
+    // Визначити температуру
+    const temp = createApp({
+      data(){
+        return{
+          inTeperature: null,
+        }
+      },
+      computed:{
+        temperatureClass(){
+          let className
+          if(this.inTeperature<0) className = "frost"
+          else if(this.inTeperature<10) className = 'low'
+          else if(this.inTeperature<22) className = 'middle'
+          else className = 'high'
+          return className
+        }
+      }
+    }).mount('#tep') 
+  
+  
+    // Визначення швидкості у процентах. та обмеження швидкості
+    const speed = createApp({
+      data(){
+        return{
+          limitSpeed: null,
+          currentSpeedValue: null,
+          intervalValid: null,
+          visibleAlert: false
+        }
+      },
+      computed:{
+        currentSpeed:{
+          get(){
+            return this.currentSpeedValue
+          },
+          set(newVal){
+            this.currentSpeedValue = newVal
+            if((newVal * 100) / this.limitSpeed > 90) this.startDisplayAlert()
+            else this.stopDisplayAlert()
+          }
+        },
+        isValidSpeed(){
+          return this.limitSpeed && this.currentSpeed
+        },
+        currentSpeedRate(){
+          return (this.currentSpeed * 100) / this.limitSpeed
+        },
+        currentClassSpeed(){
+          let currentClass = null
+          if(this.currentSpeedRate < 50) currentClass = 'min50'
+          else if(this.currentSpeedRate < 100) currentClass = 'middle100'
+          else currentClass = 'high100'
+          return currentClass
+        },
+      },
+      methods:{
+        startDisplayAlert(){
+          if(!this.intervalValid){
+            this.intervalValid = setInterval(() => {
+              this.visibleAlert = !this.visibleAlert
+            }, INTERVAL_MS);
+          }
+        },
+        stopDisplayAlert(){
+          if(this.intervalValid){
+            clearInterval(this.intervalValid)
+            this.visibleAlert = false
+            this.intervalValid = null
+          }
+        }
+      }
+    }).mount('#speed')
+
+  
+  // Сапер
+  const minesweeper = createApp({
+    data(){
+      return{
+        gamefiled:[
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 1,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 1,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 1,
+            inClosed: true,
+          },
+          {
+            hasMine: 0,
+            inClosed: true,
+          },
+          {
+            hasMine: 1,
+            inClosed: true,
+          },
+        ]
+      }
+    },
+    methods:{
+      onClick(index){
+        this.gamefiled[index].inClosed = false
+        if(this.gamefiled[index].hasMine === 0){
+          for (let i = index+1; i < this.gamefiled.length; i++) {
+            if(this.gamefiled[i].hasMine === 0)
+            this.gamefiled[i].inClosed = false
+            else break
+          }
+          for(let i = index-1; i>0; i--){
+            if(this.gamefiled[i].hasMine === 0)
+            this.gamefiled[i].inClosed = false
+            else break
+          }
+        }
+      }
+    }
+  }).mount('#Minesweeper')
+  
+  
+  
+  //Пошук ім'я
+  const searchName = createApp({
+    data(){
+      return{
+        inName: null,
+        nameArr: ['Roman', 'vladimir', 'Svetlana', 'Elena', 'Liza', 'Alexandra', 'Anton', 'Radion']
+      }
+    },
+    computed:{
+      filtorName(){
+        if(!this.inName) return this.nameArr
+        const literaName = this.inName.toLowerCase()
+        return this.nameArr.filter((name)=> name.toLowerCase().includes(literaName))
+      }
+    }
+  }).mount('#search')
+  
+  </script>
+</body>
+</html>
