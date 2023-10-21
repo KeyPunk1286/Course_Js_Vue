@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="JS/Class_Style.Ifelse_list.js"></script> -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+  <style>
+    .High{
+      background-color: green;
+    }
+    .middle{
+      background-color: yellowgreen;
+    }
+    .low{
+      background-color: red;
+    }
+    .first-place{
+      background-color: green;
+      font-size: 18px;
+    }
+    .second-place{
+      background-color: yellowgreen;
+      font-size: 14px;
+    }
+    .third-place{
+      background-color: orangered;
+      font-size: 12px;
+    }
+    .fourth-place{
+      background-color: blue;
+      font-size: 10px;
+    }
+    .icon-before::before{
+      content: '*';
+    }
+    .icon-after::after{
+      content: '!';
+    }
+    .allowed{
+      background-color: green;
+    }
+    .empty{
+      background-color: yellow;
+    }
+    .young{
+      background-color: green;
+    }
+    .senior{
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div>
+    <span>LevelEnrgy</span>
+    <input type="number" v-model="eneryLevel" :class="selctColor">
+  </div>
+  <div>
+    <span>Номер місця</span>
+    <input type="number" v-model="numberPlace" :class="placeClass">
+  </div>
+  <div>
+    <span :class="[chaingeColor, chaingeIcon]">Заряд авто з іконками</span>
+    <input type="number" v-model="inLowBatarry" >
+  </div>
+
+</div>
+<div id="app2">
+  <span>Валідаці персони</span>
+  <input type="number"
+  :class="{
+    'allowed': isWorkerAgeVailde,
+    'empty': isAgeEmpty
+  }"
+  v-model="personeAge"
+  >
+</div>
+<div id="app3">
+  <span>Валіддація</span>
+  <input type="number" v-model="personeAge">
+  <button :class="{
+    [statusClass] : isValidPersoneAge,
+  }"
+  :disabled="!isValidPersoneAge"
+  >Зареєстрватись</button>
+</div>
+<script>
+  const { createApp } = Vue 
+const app1 =  createApp({
+
+  data() {
+    return {
+      eneryLevel: null,
+      numberPlace: null,
+      inLowBatarry: null,
+    }
+  },
+  computed: {
+    chaingeColor(){
+      let bgColor = null
+      if(this.inLowBatarry){
+        if(this.inLowBatarry >= 80) bgColor = 'high'
+        else if(this.inLowBatarry >= 40) bgColor = 'middle'
+        else bgColor = 'low'
+      }
+      return bgColor
+    },
+    chaingeIcon(){
+      let icon
+      if(this.inLowBatarry){
+        icon = this.inLowBatarry  >= 50? 'icon-before' : 'icon-after'
+      }
+      return  icon
+    },
+    placeClass(){
+    let classModel
+    switch (this.numberPlace) {
+      case 1: classModel = 'first-place'
+        break;
+      case 2: classModel = 'second-place'
+        break;
+      case 3: classModel = 'third-place'
+        break;
+      case 4: classModel = 'fourth-place'
+        break;
+      }
+      return classModel
+    },
+    selctColor() {
+      let curectClass
+      if (this.eneryLevel >= 80) curectClass = 'High'
+      else if (this.eneryLevel >= 30) curectClass = 'middle'
+      else curectClass = 'low'
+      return curectClass
+    },
+
+  }
+}).mount('#app')
+
+const app2 = createApp({
+  data(){
+    return{
+      personeAge: null,
+    }
+  },
+  computed:{
+    isWorkerAgeVailde(){
+      return this.personeAge && this.personeAge >= 18
+    },
+    isAgeEmpty(){
+      return !this.personeAge
+    }
+  }
+}).mount('#app2')
+
+const app3 = createApp({
+  data(){
+    return{
+      personeAge: null,
+    }
+  },
+  computed:{
+    isValidPersoneAge(){
+      return this.personeAge && this.personeAge >= 18
+    },
+    statusClass(){
+      return this.personeAge < 45? 'young' : 'senior'
+    },
+    
+  }
+}).mount('#app3')
+</script>
+</body>
+</html>
