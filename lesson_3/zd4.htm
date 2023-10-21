@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>4_Завдання</title>
+    <style>
+      .boxDecisionDz{
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
+      .parent :not(:last-child){
+        margin-bottom: 15px;
+      }
+      .li{
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <!-- ============================ Завданя============================================ -->
+        <div class="txt">
+          <a href="index.html" class="link"
+            >Завдання_4 (Link_поернення на головну)</a
+          >
+          <div class="nameLesson">
+            Вивести список як маркований список з елементами у форматі (name: salary)
+          </div>
+        </div>
+
+        <!-- ================================ HTML ======================================== -->
+        <div class="boxDecisionDz" id="app">
+          <ul class="parent">
+            <li v-for="person in salaryList" :key="person.id" class="li">
+              - {{person.name}} : {{person.salary}}
+            </li>
+          </ul>
+        </div>
+        <!-- ================================ Script ======================================== -->
+        <script>
+          const {createApp} = Vue 
+          const listSalary = [
+            {
+              id: '1',
+              name: 'Krawtsow',
+              salary: 100000,
+            },
+            {
+              id: '2',
+              name: 'Verevski',
+              salary: 50000,
+            },
+            {
+              id: '3',
+              name: 'Krasova',
+              salary: 10000,
+            },
+            {
+              id: '4',
+              name: 'Savko',
+              salary: 5000,
+            },
+          ]
+          createApp({
+            computed:{
+              salaryList(){
+                return listSalary
+              }
+            }
+          }).mount('#app')
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

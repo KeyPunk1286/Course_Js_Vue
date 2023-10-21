@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>1_Завдання</title>
+  <style>
+  .boxDicisionDz{
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  .bg-box{
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 30px;
+  }
+  .boy-box{
+    border: 1px black solid;
+    min-width: 200px;
+    padding: 10px;
+  }
+  .girl-box{
+    border: 1px black solid;
+    min-width: 200px;
+    padding: 10px;
+  }
+  .add-button{
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 10px 5px;
+  }
+  .couple{
+    max-width: 400px;
+    border: 1px black solid;
+    padding: 10px;
+  }
+  .boyli{
+    border: 1px black solid;
+    padding: 3px 1px;
+    margin-bottom: 5px;
+  }
+  .girlli{
+    border: 1px black solid;
+    padding: 3px 1px;
+    margin-bottom: 5px;
+  }
+  .delete-button{
+    border: 1px black solid;
+    padding: 2px;
+    margin-left: 10px;
+  }
+  .coupleLi{
+    border: 1px black solid;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  </style>
+  <!-- <script src="js/script.js" defer></script> -->
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main">
+
+      <!-- ============================ Завданя============================================ -->
+      <div class="txt">
+        <a href="index.html" class="link">Завдання_1 (Link_поернення на головну)</a>
+        <div class="nameLesson">
+          Пари для танців. Поступово вибираємо хлопця, дівчину і додаємо у обрані пари. 
+          Пару можна видалити. Поки не вибрано хлопця і дівчину кнопка «Додати» заблокована.  
+          Якщо не вистачає хлопців або дівчат вибір також блокується.
+        </div>
+      </div>
+      <!-- ================================ HTML ======================================== -->
+      <div class="boxDicisionDz" id="app">
+        <div class="bg-box">
+          <div class="boy-box">
+            <p>Хлорці:</p>
+            <ul>
+              <li v-for="(boy, index) in showBoydancer" :key="index" class="boyli" @click="onClickBoyDancer(index)">{{boy}}</li>
+            </ul>
+          </div>
+          <button  class="add-button" :disabled="!unblockedButton" @click="addCoupleDancer">Додати пару</button>
+          <div class="girl-box">
+            <p>Дівчата:</p>
+            <ul>
+              <li v-for="(girl, index) in showGirlDancer" :key="index" class="girlli" @click="onClickGirlDancer(index)">{{girl}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="couple">
+          <p>Обрані пари:</p>
+          <ul>
+            <li v-for="(dancer, index) in coupleDancer" :key="index" class="coupleLi"><span>пара номер {{index+1}} - {{dancer.boyDancer}} та {{dancer.girlDancer}}</span>
+              <button @click="onDeleteCoupleDacer(index)" class="delete-button">Видалити пару</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+        
+      </div>
+      
+      <!-- ================================ Script ======================================== -->
+
+    <script>
+      const {createApp} = Vue
+      const arrBoyDancer = ['Roman', 'Volodimyr', 'Anton', 'Alexander', 'Radion', 'Stepan']
+      const arrGirlDancer = ['Liza', 'Polina', 'Svetlana', 'Kamila', 'Julia', 'Kristina']
+      createApp({
+        data(){
+          return{
+            coupleDancer:[],
+            boyDancerList: null,
+            girlDancerList: null,
+            boyDancer: null,
+            girlDancer: null
+          }
+        },
+        computed:{
+          showBoydancer(){
+            return this.boyDancerList = arrBoyDancer
+          },
+          showGirlDancer(){
+            return this.girlDancerList = arrGirlDancer
+          },
+          unblockedButton(){
+            if(this.boyDancer  && this.girlDancer ) return true
+            else return null 
+          },
+      },
+      methods:{
+          onClickBoyDancer(index){
+            this.boyDancer = index+1
+          },
+          onClickGirlDancer(index){
+            this.girlDancer = index+1
+          },
+          addCoupleDancer(){
+            this.coupleDancer.push(
+              {
+                boyDancer: this.boyDancerList[this.boyDancer-1],
+                girlDancer: this.girlDancerList[this.girlDancer-1]
+              },
+            )
+            this.boyDancerList.splice(this.boyDancer-1,1)
+            this.girlDancerList.splice(this.girlDancer-1,1)
+            this.boyDancer = null
+            this.girlDancer = null
+          },
+          onDeleteCoupleDacer(index){
+            this.boyDancerList.push(this.coupleDancer[index].boyDancer)
+            this.girlDancerList.push(this.coupleDancer[index].girlDancer)
+            this.coupleDancer.splice(index,1)
+          }
+        }
+      }).mount('#app')
+    </script>
+      
+    </main>
+    <footer class="footer"></footer>
+  </div>
+  </div>
+</body>
+</html>
