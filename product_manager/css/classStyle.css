@@ -1,0 +1,53 @@
+.parend-card {
+  max-width: 150px;
+  border: 1px black solid;
+  padding: 5px;
+}
+
+.card-img {
+  max-width: 100%;
+}
+
+.parent-boxcard {
+  display: flex;
+  max-width: 700px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+.parent-filter {
+  max-width: 150px;
+  border-right: 2px black solid;
+}
+
+.manager-box {
+  display: flex;
+  padding: 50px 20px;
+}
+
+.parent-form {
+  border: 2px black solid;
+  max-width: 400px;
+  padding: 10px;
+  background-color: rgb(66, 101, 102);
+  margin: 0 auto;
+}
+
+.form-input {
+  border: 1px black solid;
+  width: 100%;
+  margin-bottom: 10px;
+  min-height: 30px;
+}
+
+.form-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-input {
+  border: 1px black solid;
+  max-width: 150px;
+  min-height: 30px;
+}
