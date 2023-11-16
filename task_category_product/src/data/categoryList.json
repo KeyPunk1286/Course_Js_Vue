@@ -1,0 +1,17 @@
+[
+    {
+        "title": "motorcycle",
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_categories/ico_moto.png",
+        "product": "Мотоцикли"
+    },
+    {
+        "title": "scooters",
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_categories/ico_scooter.png",
+        "product": "Скутеры, мопеды"
+    },
+    {
+        "title": "atvs",
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_categories/kvadro.png",
+        "product": "Квадро­циклы"
+    }
+]

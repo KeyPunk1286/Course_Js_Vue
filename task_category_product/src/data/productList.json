@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_viper-v200b__1_.jpg",
+        "info": "VIPER V200B (ZS200-3)",
+        "price": 1189,
+        "title": "motorcycle"
+    },
+    {
+        "id": 2,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_GEON_DAKAR_GNS_300__4V___1_.jpg",
+        "info": "GEON DAKAR GNS 300 (4V) 6 GEAR",
+        "price": 2719,
+        "title": "motorcycle"
+    },
+    {
+        "id": 3,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_geon-pantera-s200-photo__1_.jpg",
+        "info": "GEON PANTERA S200 (SPORT)",
+        "price": 1444,
+        "title": "motorcycle"
+    },
+    {
+        "id": 4,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_GEON_Unit_S200_green.jpg",
+        "info": "GEON UNIT S200",
+        "price": 1349,
+        "title": "motorcycle"
+    },
+    {
+        "id": 5,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_suzuki-address-v50__1_.jpg",
+        "info": "SUZUKI ADDRESS V50",
+        "price": 629,
+        "title": "scooters"
+    },
+    {
+        "id": 6,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_spark-sp125c-2cfo__3_1.jpg",
+        "info": "SPARK SP125C-2CFO",
+        "price": 629,
+        "title": "scooters"
+    },
+    {
+        "id": 7,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_honda-dio-af68__3_.jpeg",
+        "info": "HONDA DIO AF68",
+        "price": 699,
+        "title": "scooters"
+    },
+    {
+        "id": 8,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_honda-dio-af62__1_.jpg",
+        "info": "HONDA DIO AF62",
+        "price": 669,
+        "title": "scooters"
+    },
+    {
+        "id": 9,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_elektrokvadrotsikl-hamer-800w-lux.jpg",
+        "info": "ЭЛЕКТРОКВАДРОЦИКЛ HAMER 800W LUX",
+        "price": 489,
+        "title": "atvs"
+    },
+    {
+        "id": 10,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_kvadrotsikl-linhai-yamaha-m125-preview.jpg",
+        "info": "КВАДРОЦИКЛ LINHAI-YAMAHA M125",
+        "price": 1119,
+        "title": "atvs"
+    },
+    {
+        "id": 11,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_comman-hunter-scrambler-150cc.jpg",
+        "info": "COMMAN TAO TAO SCRAMBLER 150CC",
+        "price": 1299,
+        "title": "atvs"
+    },
+    {
+        "id": 12,
+        "img": "https://mototek.com.ua/components/com_jshopping/files/img_products/thumb_Linhai_F320_EFI__1_.jpg",
+        "info": "LINHAI ATV PATHFINDER F320 EFI",
+        "price": 5199,
+        "title": "atvs"
+    }
+]
