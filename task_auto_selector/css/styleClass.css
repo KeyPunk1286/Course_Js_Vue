@@ -1,0 +1,66 @@
+.parent__filter-box {
+  padding: 40px 10px 0 20px;
+  border-right: 2px black solid;
+}
+
+.filter-box__type-auto {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.filter-box__type-input {
+  border: 2px black solid;
+  border-radius: 10px;
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.filter-box__type-auto {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.filter-box__check-parent {
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.check-parent__check-box {
+  margin-right: 15px;
+}
+.check-parent__lable {
+  font-style: italic;
+}
+
+.filter-box__type-auto {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.filter-box__name-auto {
+  border: 2px black solid;
+  border-radius: 10px;
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.filter-box__model {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.filter-box__model-auto {
+  border: 2px black solid;
+  border-radius: 10px;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.parent__front {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.filter-box__button {
+  display: block;
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 5px;
+}

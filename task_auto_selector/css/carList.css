@@ -1,0 +1,26 @@
+.car__card {
+  max-width: 300px;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.card__wraper-img {
+  max-width: 50%;
+}
+.card__wraper-img img {
+  max-width: 100%;
+}
+.card__wraper-info {
+  padding-left: 10px;
+}
+
+.wraper-info__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.wraper-info__type-body {
+  margin-bottom: 5px;
+}
+.wraper-info__price {
+  font-size: 25px;
+}

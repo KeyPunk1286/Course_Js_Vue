@@ -1,0 +1,87 @@
+.parent {
+    &__filter-box {
+        padding: 40px 10px 0 20px;
+        border-right: 2px black solid;
+    }
+}
+.filter-box {
+    &__type-auto {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__type-input {
+        border: 2px black solid;
+        border-radius: 10px;
+        width: 150px;
+        margin-bottom: 15px;
+    }
+}
+
+.filter-box {
+    &__type-auto {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__check-parent {
+        padding-left: 10px;
+        margin-bottom: 5px;
+    }
+}
+.check-parent {
+    &__check-box {
+        margin-right: 15px;
+    }
+
+    &__lable {
+        font-style: italic;
+    }
+}
+
+.filter-box {
+    &__type-auto {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__name-auto {
+        border: 2px black solid;
+        border-radius: 10px;
+        width: 150px;
+        margin-bottom: 15px;
+    }
+}
+.filter-box {
+    &__model {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__model-auto {
+        border: 2px black solid;
+        border-radius: 10px;
+        width: 150px;
+        margin-bottom: 20px;
+    }
+}
+
+.parent {
+    &__front {
+        display: flex;
+        column-gap: 20px;
+    }
+}
+.front {
+    &__filter {
+    }
+
+    &__car-list {
+    }
+}
+.filter-box__button {
+    display: block;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 5px;
+}

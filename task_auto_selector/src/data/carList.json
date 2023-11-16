@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nameAuto": "Audi",
+        "img": "https://cdn3.riastatic.com/photosnew/auto/photo/audi_a6__524175833bx.webp",
+        "model": "A6",
+        "year": 2018,
+        "price": 58999,
+        "typeBody": "Седан",
+        "type": "легкові"
+    },
+    {
+        "id": 2,
+        "nameAuto": "Chevrolet",
+        "img": "https://cdn2.riastatic.com/photosnew/auto/photo/chevrolet_malibu__520112557bx.webp",
+        "model": "Malibu",
+        "year": 2019,
+        "price": 31800,
+        "typeBody": "Седан",
+        "type": "легкові"
+    },
+    {
+        "id": 3,
+        "nameAuto": "Ford",
+        "img": "https://cdn3.riastatic.com/photosnew/auto/photo/audi_a6__524175833bx.webp",
+        "model": "Edge",
+        "year": 2019,
+        "price": 31800,
+        "typeBody": "кросовер",
+        "type": "легкові"
+    },
+    {
+        "id": 4,
+        "nameAuto": "Land Rover",
+        "img": "https://cdn0.riastatic.com/photosnew/auto/photo/land-rover_freelander__523593940bx.webp",
+        "model": "Freelander",
+        "year": 2014,
+        "price": 58999,
+        "typeBody": "кросовер",
+        "type": "легкові"
+    },
+    {
+        "id": 5,
+        "nameAuto": "Mercedes-Benz",
+        "img": "https://cdn0.riastatic.com/photosnew/auto/photo/mercedes-benz_vito__457419725bx.jpg",
+        "model": "Vito",
+        "year": 2007,
+        "price": 10400,
+        "typeBody": "мінівен",
+        "type": "автобуси"
+    },
+    {
+        "id": 6,
+        "nameAuto": "Ford",
+        "img": "https://cdn0.riastatic.com/photosnew/auto/photo/ford_c-max__524087565bx.jpg",
+        "model": "C-Max",
+        "year": 2006,
+        "price": 4399,
+        "typeBody": "мінівен",
+        "type": "автобуси"
+    },
+    {
+        "id": 7,
+        "nameAuto": "Ford",
+        "img": "https://cdn1.riastatic.com/photosnew/auto/photo/ford_f-150__523689666bx.jpg",
+        "model": "F-150",
+        "year": 2017,
+        "price": 27500,
+        "typeBody": "пікап",
+        "type": "вантажні"
+    },
+    {
+        "id": 8,
+        "nameAuto": "JAC",
+        "img": "https://cdn.riastatic.com/photosnewr/auto/new_auto_storage/jac-t8__1783484-600x400x90.jpg",
+        "model": "T8",
+        "year": 2023,
+        "price": 32230,
+        "typeBody": "пікап",
+        "type": "вантажні"
+    }
+]
