@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "categories": "Телевізори",
+        "img": "https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1680771348-718348-06.jpg&w=256&q=60",
+        "title": "'realme 43' 4K UHD Smart TV (RMV2203)",
+        "price": "13 999"
+    },
+    {
+        "id": 2,
+        "categories": "Телевізори",
+        "img": "https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1688742891-724056-01.jpg",
+        "title": "'Телевізор LG 43' 4K Smart TV (43UR81006LJ)",
+        "price": "17 799"
+    },
+    {
+        "id": 3,
+        "categories": "Ноутбукі",
+        "img": "https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1697028445-a315-35-nx.webp&w=256&q=60",
+        "title": "Ноутбук Acer Aspire 3 A315-35-C2L7 Pure Silver (NX.A6LEU.026)",
+        "price": "11 999"
+    },
+    {
+        "id": 4,
+        "categories": "Ноутбукі",
+        "img": "https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1696347827-opt.webp",
+        "title": "Ноутбук Chuwi GemiBook X Pro 14 Intel N100 8/256Gb (Grey)",
+        "price": "14 999"
+    },
+    {
+        "id": 5,
+        "categories": "Телефони",
+        "img": "https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/8/e/8e110ac9dd02bd4af41a9c7b4d58ad0b.jpg&w=256&q=60",
+        "title": "Samsung Galaxy S21 FE G990B 6/128GB Light Violet ",
+        "price": "19 199"
+    },
+    {
+        "id": 6,
+        "categories": "Телефони",
+        "img": "https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1699438631-728956-1.webp",
+        "title": "Apple iPhone 15 128GB Black (MTP03)",
+        "price": "42 499"
+    },
+    {
+        "id": 7,
+        "categories": "Монітори",
+        "img": "https://www.ctrs.com.ua/_next/image/?url=https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1683553703-2e-a2222b-02.jpg&w=256&q=60",
+        "title": "'Монітор 21.5' 2E A2222B (2E-A2222B-01.UA)",
+        "price": "3 299"
+    },
+    {
+        "id": 8,
+        "categories": "Монітори",
+        "img": "https://i.citrus.world/imgcache/size_180/uploads/shop/1/6/1689333315-g2250hs-b110.jpg",
+        "title": "'Ігровий монітор 21.5' Iiyama G2250HS-B1",
+        "price": "3 499"
+    }
+]

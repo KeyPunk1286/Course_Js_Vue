@@ -1,0 +1,151 @@
+//============= home =============
+.page-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.main {
+    &__title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    &__name-list {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    &__list :not(:last-child) {
+        margin-bottom: 10px;
+        font-size: 17px;
+    }
+}
+
+//============== Shop =============
+.page {
+    &__shop {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+}
+.shop {
+    &__title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        font-size: 17px;
+        li {
+            cursor: pointer;
+            // font-size: 35px;
+        }
+    }
+    &__list :not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+//======== payment =========
+
+.page {
+    &__payment {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+}
+.payment {
+    &__list {
+        font-size: 20px;
+    }
+    &__list :not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+//========== contact =========
+.page {
+    &__contact {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+}
+.contact {
+    &__title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        margin-bottom: 10px;
+    }
+
+    &__txt {
+        font-size: 19px;
+    }
+}
+
+//============ page-category =======
+.page-category {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.category {
+    &__cards {
+        max-width: 250px;
+        padding: 10px;
+    }
+}
+.cards {
+    &__img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    &__price {
+        font-size: 25px;
+    }
+}
+
+//============= навігація ====================
+
+.parent {
+    &__nav {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.nav {
+    &__link {
+        font-size: 20px;
+    }
+}
+//============= button ==========
+.page-button {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.button {
+    &__home {
+        font-size: 20px;
+        padding: 5px;
+        border: 1px black solid;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+//===== class active ====
+.active-class {
+    color: red;
+}

@@ -1,0 +1,121 @@
+.page-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.main__title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.main__name-list {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.main__list :not(:last-child) {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.page__shop {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.shop__title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.shop__list {
+  font-size: 17px;
+}
+.shop__list li {
+  cursor: pointer;
+}
+.shop__list :not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.page__payment {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.payment__list {
+  font-size: 20px;
+}
+.payment__list :not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.page__contact {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.contact__title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.contact__list {
+  margin-bottom: 10px;
+}
+.contact__txt {
+  font-size: 19px;
+}
+
+.page-category {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.category__cards {
+  max-width: 250px;
+  padding: 10px;
+}
+
+.cards__img {
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.cards__title {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+.cards__price {
+  font-size: 25px;
+}
+
+.parent__nav {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  font-size: 20px;
+}
+
+.page-button {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.button__home {
+  font-size: 20px;
+  padding: 5px;
+  border: 1px black solid;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}
+
+.active-class {
+  color: red;
+}
