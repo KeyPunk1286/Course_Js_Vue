@@ -1,0 +1,241 @@
+// Driver list ===============
+
+.driver-list {
+    &__parent {
+        > .parent__drivers-item:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}
+.parent {
+    &__drivers-item {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+
+    &__add-driver {
+    }
+}
+.drivers-item {
+    &__bip {
+    }
+
+    &__workExperience {
+    }
+
+    &__button {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.button {
+    &__edit {
+    }
+
+    &__delete {
+    }
+}
+.add-driver {
+    &__link {
+        display: inline-block;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 500px;
+        border: 1px black solid;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+//======== Filter-driver ===
+.parent {
+    &__filter-driver {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    &__filter-driver {
+        > .filter-driver__workExperienc:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+}
+.filter-driver {
+    &__lable {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+
+    &__input-name {
+        width: 200px;
+        border: 1px black solid;
+        margin-right: 20px;
+    }
+
+    &__workExperienc {
+        width: 50px;
+        border: 1px black solid;
+    }
+}
+
+//==== manager driver ===
+.parent-component {
+    &__driver {
+    }
+}
+.driver {
+    &__title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    &__filter {
+        margin-bottom: 40px;
+    }
+
+    &__driver-lis {
+    }
+}
+
+// buss wiew ==========
+.parent {
+    &__buses {
+        padding-top: 40px;
+    }
+}
+.buses {
+    &__item {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        display: inline-block;
+        border: 1px black solid;
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 460px;
+    }
+}
+.item {
+    &__number-plates {
+    }
+
+    &__number-pieces {
+    }
+
+    &__button {
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.button {
+    &__edit {
+    }
+
+    &__delete {
+    }
+}
+
+//===== assignment-list ===
+
+.parent {
+    &__assignment {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+    &__assignment :not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+.assignment {
+    &__item {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.item {
+    &__name-driver {
+    }
+
+    &__number-plate {
+    }
+
+    &__button {
+    }
+}
+
+//======== assignment-creator ===
+
+.parent {
+    &__assignment-creator {
+        font-family: Arial, Helvetica, sans-serif;
+        border-top: 1px black solid;
+        padding-top: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+.assignment-creator {
+    &__title {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    &__label {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    &__select {
+        border: 1px black solid;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    &__button {
+        button {
+            border: 1px black solid;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+}
+
+// ==== assignment-manager ===
+.assignments {
+    &__title {
+        font-size: 35px;
+        text-align: center;
+        padding: 40px 40px;
+    }
+
+    &__list {
+    }
+
+    &__creator {
+    }
+}
+
+//=== Home ====
+.home__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 40px;
+}
