@@ -1,0 +1,174 @@
+.container__home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-page__title {
+  font-size: 35px;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+.home-page__congratulations-text {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.home-page__info {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.worker__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.worker__container > .container__item-worker:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.container__title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+.container__item-worker {
+  display: flex;
+  max-width: 50%;
+  justify-content: space-between;
+}
+
+.item-worker__name {
+  font-weight: 600;
+}
+.candidate__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.candidate__container > .container__item-candidate:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.container__item-candidate {
+  display: flex;
+  justify-content: space-between;
+}
+.container__button button {
+  font-size: 20px;
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.item-candidate__name {
+  font-weight: 600;
+}
+.item-candidate__edit {
+  margin-right: 10px;
+}
+
+.parent__edit .container__candidate-input:first-of-type {
+  margin-right: 20px;
+}
+.parent__edit .container__candidate-input:last-of-type {
+  margin-bottom: 20px;
+}
+
+.edit__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container__candidate-lable {
+  font-size: 20px;
+  margin-right: 20px;
+}
+.container__candidate-input {
+  border: 1px black solid;
+  border-radius: 5px;
+  width: 400px;
+}
+.container__candidate-button button {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+.container__candidate-button > button:first-child {
+  margin-right: 10px;
+}
+.container__error {
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+}
+
+.interview-component {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.interview-component__container-creator {
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  margin-bottom: 30px;
+}
+
+.container-creator__workers-list {
+  display: flex;
+  flex-direction: column;
+}
+.container-creator__workers-list label {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.container-creator__candidate-list {
+  display: flex;
+  flex-direction: column;
+}
+.container-creator__candidate-list label {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.container-creator__days-week {
+  display: flex;
+  flex-direction: column;
+}
+.container-creator__days-week label {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.container-creator__button {
+  border-bottom: 2px black solid;
+  padding-bottom: 20px;
+}
+.container-creator__button button {
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+.container-creator__messageError {
+  font-size: 20px;
+  font-weight: 600;
+  color: red;
+}
+
+.container__interview-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container__interview-list > .interview-list__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.interview-list__item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.interview-creator {
+  margin-bottom: 40px;
+}

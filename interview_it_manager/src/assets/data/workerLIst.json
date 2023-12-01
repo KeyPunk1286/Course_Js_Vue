@@ -1,0 +1,12 @@
+[
+    { "id": 1, "fullName": "Іван Петров", "position": "розробник" },
+    { "id": 2, "fullName": "Марія Іванова", "position": "тестувальник" },
+    { "id": 3, "fullName": "Олег Сидоров", "position": "архітектор" },
+    { "id": 4, "fullName": "Наталя Коваленко", "position": "дизайнер" },
+    { "id": 5, "fullName": "Андрій Мельник", "position": "системний аналітик" },
+    { "id": 6, "fullName": "Оксана Григоренко", "position": "DevOps інженера" },
+    { "id": 7, "fullName": "Володимир Лисенко", "position": "front-end розробник" },
+    { "id": 8, "fullName": "Тетяна Шевченко", "position": "back-end розробник" },
+    { "id": 9, "fullName": "Сергій Павлов", "position": "проектного менеджера" },
+    { "id": 10, "fullName": "Юлія Соколова", "position": "QA інженера" }
+]

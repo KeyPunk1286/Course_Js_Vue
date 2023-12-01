@@ -1,0 +1,84 @@
+//===== приклад vuex з таскі з водіїв автобусів.
+getters: {
+        getDriverList: (state) => state.driversList,
+        getFilteredDriverList: (state) =>
+            state.driversList.filter((driver) => isFilterDriver(driver, state.filterList)),
+        getDriverById: (state) => (driverId) => state.driversList.find((driver) => driver.id == driverId),
+    },
+    mutations: {
+        deleteDriverMutations(state, driverId) {
+            state.driversList = state.driversList.filter((driver) => driver.id !== driverId)
+        },
+        addDriverMutations(state, newDriver) {
+            state.driversList.push(newDriver)
+        },
+        updateDriverMutation(state, updateDriver) {
+            const indexDriver = state.driversList.findIndex((driver) => driver.id === updateDriver.id)
+            state.driversList[indexDriver] = updateDriver
+        },
+        updateFilterMutations(state, filterData) {
+            state.filterList = filterData
+        },
+    },
+    actions: {
+        deleteDriverActions({ commit, dispatch }, driverId) {
+            commit('deleteDriverMutations', driverId)
+            dispatch('assignment/deleteAssignmentByDriverId', driverId, { root: true })
+        },
+        addDriverAction({ commit }, newDriver) {
+            commit('addDriverMutations', {
+                id: new Date().getTime(),
+                ...newDriver,
+            })
+        },
+        updateDriverAction({ commit }, updateDriver) {
+            commit('updateDriverMutation', updateDriver)
+        },
+        updateFilterActions({ commit }, filterData) {
+            commit('updateFilterMutations', filterData)
+        },
+    },
+==========================================================================================
+// ======= приклад vuex з таскі де про водіїв та автобусів компонента призначення:
+ getters: {
+        getFilledAssignmentList: (state, getters, rootState, rootGetters) =>
+            state.assignmentsList.map((assignment) => ({
+                id: assignment.id,
+                driverId: rootGetters['drivers/getDriverById'](assignment.driverId).nameDrivers,
+                busId: rootGetters['buses/getBusById'](assignment.busId).numberPlates,
+            })),
+    },
+    mutations: {
+        deleteAssignmentMutations(state, assignmentId) {
+            state.assignmentsList = state.assignmentsList.filter((assignment) => assignment.id !== assignmentId)
+        },
+        addNewAssignmentsMutations(state, newAssignment) {
+            state.assignmentsList.push(newAssignment)
+        },
+        deleteAssignmentByBusIdMutation(state, busId) {
+            state.assignmentsList = state.assignmentsList.filter((assignment) => assignment.busId !== busId)
+        },
+        deleteAssignmentByDriverIdMutation(state, driverId) {
+            state.assignmentsList = state.assignmentsList.filter((assignment) => assignment.driverId !== driverId)
+        },
+    },
+    actions: {
+        deleteAssignmentByDriverId({ commit }, driverId) {
+            commit('deleteAssignmentByDriverIdMutation', driverId)
+        },
+        deleteAssignmentByBusId({ commit }, busId) {
+            commit('deleteAssignmentByBusIdMutation', busId)
+        },
+        deleteAssignmentActions({ commit }, assignmentId) {
+            commit('deleteAssignmentMutations', assignmentId)
+        },
+        addNewAssignmentsActions({ commit }, newAssignment) {
+            commit('addNewAssignmentsMutations', {
+                id: new Date().getTime,
+                ...newAssignment,
+            })
+        },
+    },
+    ==========================================================================================
+
+    

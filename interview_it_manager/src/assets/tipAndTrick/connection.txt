@@ -1,0 +1,35 @@
+============= файл хелперів =================
+export function isFilterDriver(driver, filter) {
+    if (filter.nameDrivers) {
+        if (!driver.nameDrivers.toLowerCase().includes(filter.nameDrivers.toLowerCase())) return false
+    }
+    if (filter.workExperienceMin) {
+        if (filter.workExperienceMin > driver.workExperience) return false
+    }
+    if (filter.workExperienceMax) {
+        if (filter.workExperienceMax < driver.workExperience) return false
+    }
+    return true
+}
+
+а так він підключається у vuex import { isFilterDriver } from '@/store/moduls/helpers.js'
+==========================================================================================
+============== в головному сторі ==== підключення модулів=============
+модуль: import drivers from '@/store/moduls/drivers.js'
+modules: {
+        drivers,
+        buses,
+        assignment,
+    },
+
+===============================================================================================
+//=======  так в середені файлу модулів:
+export default ({
+    namespaced: true,
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
+  modules: {},
+});
+===============================================================================
