@@ -1,0 +1,21 @@
+.select-List {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+
+    padding-top: 40px;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        font-size: 20px;
+    }
+}
+.select-List :not(:last-of-type) {
+    margin-bottom: 20px;
+}

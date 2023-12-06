@@ -1,0 +1,38 @@
+.login-page {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    font-size: 20px;
+    padding-top: 40px;
+
+    &__username {
+        margin-bottom: 20px;
+        label {
+            margin-right: 20px;
+        }
+        input {
+            border: 1px darkslategray solid;
+            border-radius: 5px;
+        }
+    }
+
+    &__pass {
+        margin-bottom: 30px;
+        label {
+            margin-right: 23px;
+        }
+        input {
+            border: 1px darkslategray solid;
+            border-radius: 5px;
+        }
+    }
+
+    &__button {
+        button {
+            border: 1px darkslategray solid;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.add-teacher {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.add-teacher__input-block {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.add-teacher__title {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.add-teacher__item-subject {
+  font-size: 20px;
+}
+
+.input-block__name {
+  margin-bottom: 15px;
+}
+.input-block__name label {
+  margin-right: 20px;
+}
+.input-block__name input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.input-block__subject {
+  margin-bottom: 15px;
+}
+.input-block__subject label {
+  margin-right: 20px;
+}
+.input-block__subject input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.input-block__button button {
+  font-weight: 600;
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+}

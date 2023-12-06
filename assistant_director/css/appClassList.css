@@ -1,0 +1,23 @@
+.app-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px darkslategray solid;
+}
+.app-nav__menu a {
+  font-size: 20px;
+  font-weight: 600;
+}
+.app-nav__menu a:focus {
+  color: red;
+}
+.app-nav__menu :not(:last-child) {
+  margin-right: 20px;
+}
+.app-nav__login {
+  font-size: 17px;
+}

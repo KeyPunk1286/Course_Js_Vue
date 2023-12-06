@@ -1,0 +1,16 @@
+.container__home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+
+.home-page__txt-greeting {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.home-page__txt-login {
+  font-size: 20px;
+}

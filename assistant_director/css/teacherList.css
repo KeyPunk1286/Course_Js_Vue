@@ -1,0 +1,40 @@
+.teacher-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.teacher-list .teacher-list__item-teacher:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.teacher-list__warning-message {
+  font-size: 25px;
+  color: red;
+}
+.teacher-list__warning-message span {
+  margin-right: 10px;
+}
+.teacher-list__warning-message button {
+  border: 1px red solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+.teacher-list__item-teacher {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.teacher-list__button button {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.item-teacher__name {
+  font-size: 20px;
+}
+.item-teacher__button {
+  font-size: 20px;
+}

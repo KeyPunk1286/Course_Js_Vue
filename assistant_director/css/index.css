@@ -1,0 +1,301 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+textarea,
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > main {
+  flex-grow: 1;
+}
+
+.app-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px darkslategray solid;
+}
+.app-nav__menu a {
+  font-size: 20px;
+  font-weight: 600;
+}
+.app-nav__menu :not(:last-child) {
+  margin-right: 20px;
+}
+.app-nav__login {
+  font-size: 17px;
+}
+
+.login-page {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  font-size: 20px;
+  padding-top: 40px;
+}
+.login-page__username {
+  margin-bottom: 20px;
+}
+.login-page__username label {
+  margin-right: 20px;
+}
+.login-page__username input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.login-page__pass {
+  margin-bottom: 30px;
+}
+.login-page__pass label {
+  margin-right: 23px;
+}
+.login-page__pass input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.login-page__button button {
+  border: 1px darkslategray solid;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.container__home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+
+.home-page__txt-greeting {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.home-page__txt-login {
+  font-size: 20px;
+}
+
+.subject-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.subject-page > .subject-page__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.subject-page__item {
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.subject-page__item label {
+  font-size: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.subject-page__button button {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.teacher-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.teacher-list .teacher-list__item-teacher:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.teacher-list__item-teacher {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+.teacher-list__button button {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.item-teacher__name {
+  font-size: 20px;
+}
+.item-teacher__button {
+  font-size: 20px;
+}
+
+.add-teacher {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.add-teacher__input-block {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.add-teacher__title {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.add-teacher__item-subject {
+  font-size: 20px;
+}
+
+.input-block__name {
+  margin-bottom: 15px;
+}
+.input-block__name label {
+  margin-right: 20px;
+}
+.input-block__name input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.input-block__subject {
+  margin-bottom: 15px;
+}
+.input-block__subject label {
+  margin-right: 20px;
+}
+.input-block__subject input {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+}
+.input-block__button button {
+  font-weight: 600;
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.error-message {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.error-message__subject {
+  color: red;
+  font-size: 25px;
+}
+.error-message__Teacher {
+  color: red;
+  font-size: 25px;
+}
+.error-message__button button {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.error-message :not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.select-subject {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.select-subject__item span {
+  font-size: 20px;
+  margin-right: 20px;
+}
+.select-subject__item select {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  width: 200px;
+}
+.select-subject__item select option {
+  font-size: 20px;
+}
+.select-subject__button button {
+  border: 1px darkslategray solid;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.select-subject :not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.select-List {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: darkslategray;
+  padding-top: 40px;
+}
+.select-List__item {
+  font-size: 20px;
+}

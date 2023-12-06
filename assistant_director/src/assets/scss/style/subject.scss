@@ -1,0 +1,29 @@
+.subject-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    padding-top: 40px;
+    > .subject-page__item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__item {
+        max-width: 200px;
+        display: flex;
+        justify-content: space-between;
+        label {
+            font-size: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &__button {
+        button {
+            border: 1px darkslategray solid;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+}
