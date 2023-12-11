@@ -1,0 +1,10 @@
+.page-not-found {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.page-not-found__title {
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2c3e50;
+}

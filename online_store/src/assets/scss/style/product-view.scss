@@ -1,0 +1,25 @@
+.product-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding-top: 40px;
+}
+.product-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 20px 0;
+    color: #2c3e50;
+    a {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    a:not(:last-of-type) {
+        margin-right: 20px;
+    }
+    .router-link-exact-active {
+        color: #42b983;
+    }
+}

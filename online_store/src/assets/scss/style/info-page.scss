@@ -1,0 +1,35 @@
+.contact-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0 20px;
+    &__link {
+        font-size: 20px;
+        color: #2c3e50;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    &__galery {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 20px;
+        color: #2c3e50;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.box {
+    &__img {
+        max-width: 25%;
+        img {
+            max-width: 100%;
+        }
+    }
+}

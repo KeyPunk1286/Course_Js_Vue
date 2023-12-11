@@ -1,0 +1,35 @@
+.login-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    &__box {
+    }
+
+    &__button {
+        button {
+            color: #2c3e50;
+            font-weight: 600;
+            border: 1px #2c3e50 solid;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
+}
+.box {
+    &__label {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+}
+.label {
+    &__span {
+        margin-right: 20px;
+    }
+
+    &__input {
+        border: 2px #2c3e50 solid;
+        border-radius: 5px;
+    }
+}

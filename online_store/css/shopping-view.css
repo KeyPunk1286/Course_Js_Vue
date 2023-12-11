@@ -1,0 +1,19 @@
+.shopping-rules {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.shopping-rules__title {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+.shopping-rules__list {
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+.shopping-rules__list li:not(:last-child) {
+  margin-bottom: 15px;
+}
