@@ -1,0 +1,53 @@
+.assignment-view__new-appointment {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+.assignment-view__appointment {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+.assignment-creator {
+  padding-bottom: 40px;
+}
+.assignment-creator__driver-select {
+  margin-bottom: 20px;
+}
+.assignment-creator__driver-select label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.assignment-creator__driver-select select {
+  border: 2px black solid;
+  min-height: 30px;
+}
+.assignment-creator__bus-select {
+  margin-bottom: 20px;
+}
+.assignment-creator__bus-select label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.assignment-creator__bus-select select {
+  border: 2px black solid;
+  min-height: 30px;
+}
+.assignment-list__loading {
+  padding: 40px 20px;
+}
+.assignment-list__error {
+  font-size: 30px;
+}
+.box-item__appointment {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.box-item__appointment :not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.appointment__txt > span:first-child {
+  margin-right: 50px;
+}

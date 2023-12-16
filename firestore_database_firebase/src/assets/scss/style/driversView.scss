@@ -1,0 +1,148 @@
+//=============== driver-view =========
+.driver-view {
+    &__title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+}
+
+//================ driver-filter =======
+.filter-driver {
+    &__box {
+        padding: 40px 20px 40px;
+        border-bottom: 2px black solid;
+        background-color: rgba(0, 0, 0, 0.057);
+    }
+}
+.box {
+    &__input {
+        display: flex;
+        column-gap: 100px;
+        margin-bottom: 30px;
+    }
+
+    &__button {
+    }
+}
+.input {
+    &__name {
+        span {
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 30px;
+            padding: 0 10px 0;
+        }
+    }
+
+    &__age {
+        display: flex;
+        column-gap: 20px;
+        span {
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 30px;
+            width: 70px;
+            padding: 0 10px 0;
+        }
+    }
+}
+.age {
+    &__min {
+    }
+
+    &__max {
+    }
+}
+
+// ============== driver- list ========
+.list-driver {
+    padding: 10px 20px;
+    &__loader {
+    }
+
+    &__error {
+        font-size: 30px;
+    }
+
+    &__box :not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__button {
+    }
+}
+.box {
+    &__item {
+        display: flex;
+        max-width: 50%;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+}
+.item {
+    &__txt {
+        display: flex;
+        > p:first-child {
+            margin-right: 30px;
+        }
+    }
+
+    &__btn {
+        > button:first-child {
+            margin-right: 10px;
+        }
+    }
+}
+
+//=============== driver - edit ========
+.edit-driver {
+    display: flex;
+    justify-content: space-between;
+    &__name {
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 37px;
+            width: 300px;
+            padding: 0 10px 0;
+        }
+    }
+
+    &__exp {
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 37px;
+            width: 70px;
+            padding: 0 10px 0;
+        }
+    }
+
+    &__button :first-child {
+        margin-right: 10px;
+    }
+}

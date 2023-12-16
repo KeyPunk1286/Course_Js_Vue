@@ -1,0 +1,63 @@
+.buses-view__title {
+  font-size: 30px;
+}
+
+.buses-list {
+  padding: 40px 20px;
+}
+.buses-list__box {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.buses-list__box :not(:last-child) {
+  margin-bottom: 15px;
+}
+.box__item-bus {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+}
+
+.item-bus__txt {
+  display: flex;
+}
+.item-bus__txt > span :first-child {
+  margin-right: 50px;
+}
+.item-bus__txt :first-child {
+  margin-right: 50px;
+}
+.item-bus__button :first-child {
+  margin-right: 10px;
+}
+
+.buses-edit {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.buses-edit__plates label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.buses-edit__plates input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 300px;
+  padding: 0 10px 0;
+}
+.buses-edit__number-seats label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.buses-edit__number-seats input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 70px;
+  padding: 0 10px 0;
+}
+.buses-edit__button :first-child {
+  margin-right: 10px;
+}

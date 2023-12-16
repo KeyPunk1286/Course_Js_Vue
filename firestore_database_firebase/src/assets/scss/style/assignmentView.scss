@@ -1,0 +1,79 @@
+//============== assignment-view ==========
+.assignment-view {
+    &__new-appointment {
+        font-size: 30px;
+        padding-bottom: 40px;
+        // border-bottom: 1px rgba(0, 0, 0, 0.302) solid;
+    }
+
+    &__appointment {
+        font-size: 30px;
+        padding-bottom: 40px;
+    }
+}
+
+//=============== asignment-creator ========
+.assignment-creator {
+    padding-bottom: 40px;
+    &__driver-select {
+        margin-bottom: 20px;
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        select {
+            border: 2px black solid;
+            min-height: 30px;
+        }
+    }
+
+    &__bus-select {
+        margin-bottom: 20px;
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        select {
+            border: 2px black solid;
+            min-height: 30px;
+        }
+    }
+
+    &__button {
+    }
+}
+
+//================ assignment-list =========
+.assignment-list {
+    &__loading {
+        padding: 40px 20px;
+    }
+
+    &__error {
+        font-size: 30px;
+    }
+
+    &__box-item {
+    }
+}
+.box-item {
+    &__appointment {
+        max-width: 50%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+    &__appointment :not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+.appointment {
+    &__txt {
+        > span:first-child {
+            margin-right: 50px;
+        }
+    }
+
+    &__button {
+    }
+}

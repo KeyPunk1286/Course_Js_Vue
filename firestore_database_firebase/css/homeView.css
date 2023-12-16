@@ -1,0 +1,14 @@
+.container__home h1 {
+  font-size: 30px;
+}
+
+.navigator-home {
+  padding: 30px;
+}
+.navigator-home a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+.navigator-home a.router-link-exact-active {
+  color: #42b983;
+}

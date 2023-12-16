@@ -1,0 +1,312 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+textarea,
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > main {
+  flex-grow: 1;
+}
+
+.container__home h1 {
+  font-size: 30px;
+}
+
+.navigator-home {
+  padding: 30px;
+}
+.navigator-home a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+.navigator-home a.router-link-exact-active {
+  color: #42b983;
+}
+
+.driver-view__title {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.filter-driver__box {
+  padding: 40px 20px 40px;
+  border-bottom: 2px black solid;
+  background-color: rgba(0, 0, 0, 0.057);
+}
+
+.box__input {
+  display: flex;
+  -moz-column-gap: 100px;
+       column-gap: 100px;
+  margin-bottom: 30px;
+}
+.input__name span {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.input__name label {
+  margin-right: 10px;
+}
+.input__name input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 30px;
+  padding: 0 10px 0;
+}
+.input__age {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.input__age span {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.input__age label {
+  margin-right: 10px;
+}
+.input__age input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 30px;
+  width: 70px;
+  padding: 0 10px 0;
+}
+
+.list-driver {
+  padding: 10px 20px;
+}
+.list-driver__error {
+  font-size: 30px;
+}
+.list-driver__box :not(:last-child) {
+  margin-bottom: 15px;
+}
+.box__item {
+  display: flex;
+  max-width: 50%;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.item__txt {
+  display: flex;
+}
+.item__txt > p:first-child {
+  margin-right: 30px;
+}
+.item__btn > button:first-child {
+  margin-right: 10px;
+}
+
+.edit-driver {
+  display: flex;
+  justify-content: space-between;
+}
+.edit-driver__name label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.edit-driver__name input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 300px;
+  padding: 0 10px 0;
+}
+.edit-driver__exp label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.edit-driver__exp input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 70px;
+  padding: 0 10px 0;
+}
+.edit-driver__button :first-child {
+  margin-right: 10px;
+}
+
+.buses-view__title {
+  font-size: 30px;
+}
+
+.buses-list {
+  padding: 40px 20px;
+}
+.buses-list__box {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.buses-list__box :not(:last-child) {
+  margin-bottom: 15px;
+}
+.box__item-bus {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+}
+
+.item-bus__txt {
+  display: flex;
+}
+.item-bus__txt > span :first-child {
+  margin-right: 50px;
+}
+.item-bus__txt :first-child {
+  margin-right: 50px;
+}
+.item-bus__button :first-child {
+  margin-right: 10px;
+}
+
+.buses-edit {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.buses-edit__plates label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.buses-edit__plates input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 300px;
+  padding: 0 10px 0;
+}
+.buses-edit__number-seats label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.buses-edit__number-seats input {
+  border: 2px black solid;
+  border-radius: 5px;
+  min-height: 37px;
+  width: 70px;
+  padding: 0 10px 0;
+}
+.buses-edit__button :first-child {
+  margin-right: 10px;
+}
+
+.assignment-view__new-appointment {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+.assignment-view__appointment {
+  font-size: 30px;
+  padding-bottom: 40px;
+}
+
+.assignment-creator {
+  padding-bottom: 40px;
+}
+.assignment-creator__driver-select {
+  margin-bottom: 20px;
+}
+.assignment-creator__driver-select label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.assignment-creator__driver-select select {
+  border: 2px black solid;
+  min-height: 30px;
+}
+.assignment-creator__bus-select {
+  margin-bottom: 20px;
+}
+.assignment-creator__bus-select label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.assignment-creator__bus-select select {
+  border: 2px black solid;
+  min-height: 30px;
+}
+.assignment-list__loading {
+  padding: 40px 20px;
+}
+.assignment-list__error {
+  font-size: 30px;
+}
+.box-item__appointment {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.box-item__appointment :not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.appointment__txt > span:first-child {
+  margin-right: 50px;
+}
+.contact-view {
+  padding: 40px 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact-view :not(:last-child) {
+  margin-bottom: 15px;
+}

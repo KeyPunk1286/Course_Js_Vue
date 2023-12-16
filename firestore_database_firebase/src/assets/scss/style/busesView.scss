@@ -1,0 +1,89 @@
+.buses-view {
+    &__title {
+        font-size: 30px;
+        // margin-bottom: 40px;
+    }
+}
+
+//=============== buses-list ========
+.buses-list {
+    padding: 40px 20px;
+
+    &__loading {
+    }
+
+    &__error {
+    }
+
+    &__box {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    &__box :not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__button {
+    }
+}
+.box {
+    &__item-bus {
+        display: flex;
+        justify-content: space-between;
+        max-width: 50%;
+    }
+}
+.item-bus {
+    &__txt {
+        display: flex;
+        > span :first-child {
+            margin-right: 50px;
+        }
+    }
+    &__txt :first-child {
+        margin-right: 50px;
+    }
+
+    &__button :first-child {
+        margin-right: 10px;
+    }
+}
+
+//============= buses-edit =========
+.buses-edit {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &__plates {
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 37px;
+            width: 300px;
+            padding: 0 10px 0;
+        }
+    }
+
+    &__number-seats {
+        label {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        input {
+            border: 2px black solid;
+            border-radius: 5px;
+            min-height: 37px;
+            width: 70px;
+            padding: 0 10px 0;
+        }
+    }
+
+    &__button :first-child {
+        margin-right: 10px;
+    }
+}
